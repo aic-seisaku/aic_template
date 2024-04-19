@@ -1,0 +1,128 @@
+@use "sass:math";
+
+////////////////////
+// インナー幅設定
+////////////////////
+// コンテンツのインナー幅（最も共通の幅が多い部分）
+$inner: 1100px;
+// ※キャンパス幅ではなくインナーの幅を指す
+
+// 余白
+$padding-pc: 25px;
+$padding-sp: 20px;
+// ※PC時：デザインカンプの余白の幅ではない。PC時は通常25pxで大丈夫！
+
+////////////////////
+// フォント設定
+////////////////////
+
+$base-font-family: "";
+$second-font-family: "";
+
+// フォントウェイト
+$regular: 300;
+$normal: 400;
+$bold: 700;
+
+body {
+  font-family: $base-font-family;
+}
+
+////////////////////
+// 色の指定
+////////////////////
+
+//色指定（共通性のあるものは出来る限り指定すると良い）
+$black: #111;
+$white: #fff;
+
+////////////////////
+// メディアクエリとブレークポイントの設定
+////////////////////
+
+// メインブレークポイント（PC最小幅）
+$main-breakpoints: 768;
+
+$breakpoints: (
+  pc: $main-breakpoints,
+  sp: $main-breakpoints - 1,
+  // 細かく設定する場合はこちら
+  s: 640,
+  m: 919,
+  l: 1439,
+  xl: 1440,
+  rs: 641px
+) !default;
+
+//メディアクエリー
+$mediaquerys: (
+  pc: "screen and (min-width: #{map-get($breakpoints, "pc")}px)",
+  sp: "screen and (max-width: #{map-get($breakpoints, "sp")}px)",
+  s: "screen and (max-width: #{map-get($breakpoints, "s")}px)",
+  m: "screen and (max-width: #{map-get($breakpoints, "m")}px)",
+  l: "screen and (max-width: #{map-get($breakpoints, "l")}px)",
+  xl: "screen and (min-width: #{map-get($breakpoints, "xl")}px)",
+  rs: "screen and (min-width: #{map-get($breakpoints, "rs")}px)"
+);
+// @include mq(){}で書くとブレークポイントが反映される（初期値はsp）
+@mixin mq($mediaquery: sp) {
+  @media #{map-get($mediaquerys, $mediaquery)} {
+    @content;
+  }
+}
+
+// remへの計算式（16pxを基準としている。10pxを基準とする場合は16を10に変更する）
+// 16px → rem(16)　と記述
+@function rem($pixels) {
+  @return math.div($pixels, 16) * 1rem;
+}
+
+////////////////////
+// 非表示設定
+////////////////////
+
+@include mq(pc) {
+  .pc-none {
+    display: none;
+  }
+}
+
+@include mq(sp) {
+  .sp-none {
+    display: none;
+  }
+}
+
+@include mq(xl) {
+  .xl-none {
+    display: none;
+  }
+}
+
+@include mq(l) {
+  .l-none {
+    display: none;
+  }
+}
+
+@include mq(m) {
+  .m-none {
+    display: none;
+  }
+}
+
+@include mq(s) {
+  .s-none {
+    display: none;
+  }
+}
+
+@include mq(rs) {
+  .rs-none {
+    display: none;
+  }
+}
+
+// 余白
+$space: 8;
+$space-range: 30;
