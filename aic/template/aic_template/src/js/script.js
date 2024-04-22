@@ -1,3 +1,0 @@
-// jQuery
-jQuery(function($){
-});
