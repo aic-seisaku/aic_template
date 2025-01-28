@@ -96,7 +96,6 @@ gulpで以下の機能を利用します。
 画面幅につきまして、基本的には以下のもので考慮ください。
 
 - PC：768px（または920px）～1920px
-
 - SP：375px～767px（または919px）
 
 ### 【画像】
@@ -148,14 +147,9 @@ ex）
 ### 【バージョン】
 最新バージョンでの構築をお願いします。
 
-▼バージョンの自動更新はON
+▼プラグイン、バージョンの自動更新はON
 
-「このサイトは WordPress の新しいバージョンごとに自動的に最新の状態に保たれます。
-
-### 【固定ページ】
-固定ページの静的箇所につきましては、基本的に固定ページにHTMLで書いていただく形でお願いします。
-
-（ヒーローヘッダー等の部分はcssや共通部、サムネイル依存などでも構いません）
+「このサイトは WordPress の新しいバージョンごとに自動的に最新の状態に保たれます。」
 
 ### 【プラグイン】
 プラグインは指定のものをご利用ください。
@@ -188,13 +182,13 @@ https://ja.wordpress.org/plugins/contact-form-7-multi-step-module/
 
 #### SEO
 Yoast SEO
+
 https://ja.wordpress.org/plugins/wordpress-seo/
 
 #### 移行
 All-in-One WP Migration
 
 https://ja.wordpress.org/plugins/all-in-one-wp-migration/
-
 
 WPvivid
 
@@ -205,15 +199,11 @@ SiteGuard WP Plugin
 
 https://ja.wordpress.org/plugins/siteguard/
 
-#### 記事の並び替え
-Intuitive Custom Post Order
+----------------------------------------------------------------------------------------
 
-https://wordpress.org/plugins/intuitive-custom-post-order/
-
-#### ユーザー権限
-User Role Editor
-
-https://ja.wordpress.org/plugins/user-role-editor/
+## 【noindex】
+テストサイトで作成時、必ずnoindexをかけてください。
+また、本番公開時には外していただいきますようお願いします。
 
 ----------------------------------------------------------------------------------------
 
